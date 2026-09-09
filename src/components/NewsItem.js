@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export class NewsItem extends Component {
 
   render() {
-   const {title,description,imageUrl,newsUrl} = this.props;
+   const {title,description,imageUrl,newsUrl,author,date} = this.props;
     
     return (
       <div>
@@ -13,6 +13,7 @@ export class NewsItem extends Component {
         <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
+            <p className="card-text"><small className='text-muted'>By {author} on {new Date(date).toGMTString()}</small></p>
             <Link to={newsUrl} target='_blank' className="btn btn-sm btn-primary">read more</Link>
         </div>
         </div>
